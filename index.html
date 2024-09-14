@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TotallyNotFreeModel Productions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            color: #333;
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+            font-size: 16px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #fff, #fdd835);
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 4px solid #1976d2;
+        }
+
+        .header .logo {
+            width: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1976d2;
+            letter-spacing: 2px;
+        }
+
+        p.tagline {
+            font-size: 1.5rem;
+            color: #444;
+        }
+
+        /* Section styling with gradients */
+        .section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px;
+            color: white;
+            position: relative;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.85;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .yellow-bg {
+            background: linear-gradient(135deg, #fff59d, #fdd835);
+        }
+
+        .blue-bg {
+            background: linear-gradient(135deg, #42a5f5, #1976d2);
+        }
+
+        .white-bg {
+            background: linear-gradient(135deg, #ffffff, #e3f2fd);
+            color: #333;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 12px 24px;
+            background-color: #1976d2;
+            color: white;
+            border-radius: 30px;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #1565c0;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1976d2;
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        /* Animations */
+        .section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.7s ease-out;
+        }
+
+        .section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Media Queries for Mobile */
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Media Queries for Desktop */
+        @media screen and (min-width: 769px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="https://avatars.githubusercontent.com/u/180134459?v=4" alt="TotallyNotFreeModel Productions" class="logo">
+        <h1>TotallyNotFreeModel Productions</h1>
+        <p class="tagline">Aiming to prove that free assets can still make great games!</p>
+    </header>
+
+    <section class="section yellow-bg">
+        <h2>Who We Are</h2>
+        <p>We are a passionate group of developers using free models and assets to create incredible games on Roblox. Join us in proving that quality isn't bound by price!</p>
+        <a href="#mission" class="btn">Learn More</a>
+    </section>
+
+    <section class="section blue-bg" id="mission">
+        <h2>Our Mission</h2>
+        <p>At TotallyNotFreeModel Productions, we believe in the power of community-driven content. Free assets have potential, and we're here to show the world just how incredible they can be when used creatively.</p>
+        <a href="#games" class="btn">See Our Games</a>
+    </section>
+
+    <section class="section white-bg" id="games">
+        <h2>Our Games</h2>
+        <p>Check out our fantastic lineup of games made entirely with free models. We've created immersive, fun experiences that rival even the most premium content. We are proving that innovation comes from creativity, not cost!</p>
+        <a href="https://www.roblox.com/groups/34543643/totallynotfreemodel-Productions#!/about" class="btn" target="_blank">Play Now</a>
+    </section>
+
+    <footer class="footer">
+        <p>© 2024 TotallyNotFreeModel Productions | Powered by free assets!</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.section');
+            const triggerBottom = window.innerHeight / 5 * 4;
+
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < triggerBottom) {
+                    section.classList.add('show');
+                } else {
+                    section.classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
